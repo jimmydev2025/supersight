@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .tab-container {
+      display: flex; 
+    border: 1px solid rgb(141, 153, 218);
+    margin-bottom: 2rem;
+    border-radius: 10px; 
+    overflow: hidden;
+;
+    -webkit-box-align: center;
+    align-items: center;
+    }
+
+    .tab {
+      cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgb(141, 153, 218);
+    background-color: rgb(23, 29, 51);
+    border-right: 1px solid rgb(141, 153, 218);
+    padding: 12px;
+    flex: 1 1 auto; 
+    }
+
+    .tab.active {
+         /* background-color: #fff; */
+    /* border-bottom: 2px solid #fff; */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 0em;
+    text-align: center;
+    background: rgb(141, 153, 218);
+    color: rgb(17, 17, 17);
+    /* border-radius: 10px 0px 0px 10px; */
+    border-right: 1px solid rgb(141, 153, 218);
+    padding: 12px;
+    flex: 1 1 auto;
+    }
+    .tab-content{
+      display: none;
+    }
+     
+
+    .tab-content.active {
+      display: block;
+    }
+    body {
+        background: #000000;
+    }
+
+    h2 {
+    background: rgb(23, 29, 51);
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .tab-container {
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    .tab.active {
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        font-size: 1rem;
+        width: 35%;
+        border-radius: 10px 0px 0px;
+        border-bottom: 1px solid rgb(141, 153, 218);
+    }
+    .tab {
+      flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        font-size: 1rem;
+        width: 35%;
+        border-radius: 0px 10px 0px 0px;
+        border-bottom: 1px solid rgb(141, 153, 218);
+    }
+}
+  </style>
+</head>
+<body> 
+  <div class="tab-container">
+    <div class="tab active" data-tab="tab1">🐳 Watch whales</div>
+    <div class="tab" data-tab="tab2">🔥 What’s hot?</div>
+    <div class="tab" data-tab="tab3">🖨️ Copytrade</div>
+    <div class="tab" data-tab="tab4">🔇 Filter noise</div>
+    <div class="tab" data-tab="tab5">☠️ Mitigate risk</div>
+  </div>
+
+  <div id="tab1" class="tab-content active">
+    <h2>What else are PEPE holders buying in the last 30 days?</h2>
+    <video 
+    src="vid.mp4" 
+    autoplay 
+    muted 
+    playsinline 
+    loop  
+    width="100%"> 
+  </video>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <h2>Who bought LDO low and sold high 3 times in the last 30 days?</h2>
+    <video 
+    src="vid2.mp4" 
+    autoplay 
+    muted 
+    playsinline 
+    loop  
+    width="100%"> 
+  </video>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <h2>Tax loss harvesting in the NFT markets</h2>
+    <video 
+    src="vid3.mp4" 
+    autoplay 
+    muted 
+    playsinline 
+    loop  
+    width="100%"> 
+  </video>
+  </div>
+
+  <div id="tab4" class="tab-content">
+    <h2>Binance net flow in the last 7 days</h2>
+    <video 
+    src="vid4.mp4" 
+    autoplay 
+    muted 
+    playsinline 
+    loop  
+    width="100%"> 
+  </video>
+  </div>
+
+  <div id="tab5" class="tab-content">
+    <h2>VC activities in the last 90 days</h2>
+    <video 
+    src="vid5.mp4" 
+    autoplay 
+    muted 
+    playsinline 
+    loop  
+    width="100%"> 
+  </video>
+  </div>
+
+  <script>
+    // Select all tabs and tab content
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove 'active' class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+
+        // Add 'active' class to the clicked tab and corresponding content
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
